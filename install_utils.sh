@@ -100,13 +100,7 @@ fi
 echo "Do you want to install Composer? (Enter: yes/no)"
 read -r INSTALL_COMPOSER
 
-if [ "$INSTALL_COMPOSER" == "yes" ]; then
-    if [ -f "/usr/local/bin/composer" ]; then
-        echo "Composer is already installed."
-    else
-        echo "Installing Composer..."
-        curl -sS https://getcomposer.org/installer | php
-        sudo mv composer.phar /usr/local/bin/composer
-        echo "Composer has been installed."
-    fi
+if [[ -z "$INSTALL_COMPOSER" || "$INSTALL_COMPOSER" == "yes" ]]; then
+    install_package "composer" "composer" "curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer"
+    composer --version
 fi
