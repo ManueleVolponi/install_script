@@ -57,12 +57,14 @@ read -r INSTALL_CHOICE
     PY_INSTALLED=0
     PHP_INSTALLED=0
 
-    if python3 --version &> /dev/null then
+    if python3 --version &> /dev/null
+    then
         echo "Python is already installed."
         PY_INSTALLED=1
     fi
 
-    if php -v &> /dev/null then
+    if php -v &> /dev/null
+    then
         echo "PHP is already installed."
         PHP_INSTALLED=1
     fi
@@ -83,7 +85,8 @@ read -r INSTALL_CHOICE
 
 #install Python
 if [ "$INSTALL_CHOICE" == "python" ]; then
-    if python3 --version &> /dev/null then
+    if python3 --version &> /dev/null
+    then
         echo "Python is already installed."
     else
         sudo apt update && sudo apt install -y python3 python3-pip
@@ -94,7 +97,8 @@ fi
 
 #install PHP
 if [ "$INSTALL_CHOICE" == "php" ]; then
-    if php -v &> /dev/null then
+    if php -v &> /dev/null
+    then
         echo "PHP is already installed."
     else
         sudo apt update && sudo apt install -y php
