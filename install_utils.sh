@@ -72,7 +72,7 @@ if [[ -z "$INSTALL_CHOICE"  || "$INSTALL_CHOICE" == "both" ]]; then
     fi
 
     if [[ "$PY_INSTALLED" == 0 ]]; then
-        sudo apt update && sudo apt install -y python3 python3-pip
+        sudo apt update && sudo apt install -y python3 python3-pip python3-venv
         echo "Python has been installed."
     fi
 
@@ -86,7 +86,7 @@ fi
 
 #install Python
 if [ "$INSTALL_CHOICE" == "python" ]; then
-    install_package "python3" "python3" "sudo apt update && sudo apt install -y python3 python3-pip"
+    install_package "python3" "python3" "sudo apt update && sudo apt install -y python3 python3-pip python3-venv"
     python3 --version
 fi
 
